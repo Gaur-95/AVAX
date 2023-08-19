@@ -18,7 +18,7 @@ The `ErrorHandlingExample` contract includes the following functions to demonstr
 
 1. `setValue(uint256 _newValue)`: This function sets the `value` variable to the provided `_newValue` parameter. It uses the `require()` function to validate that the input `_newValue` is greater than 0, otherwise, it reverts the transaction with an error message.
 
-2. `assertExample(uint256 x, uint256 y)`: This function takes two parameters, `x` and `y`, and returns the result of dividing `x` by `y`. It uses the `assert()` function to ensure that division by zero does not occur. If `y` is equal to 0, the function will throw an exception.
+2. `assertExample(uint256 P, uint256 Q)`: This function takes two parameters, `P` and `Q`, and returns the result of dividing `P` by `Q`. It uses the `assert()` function to ensure that division by zero does not occur. If `Q` is equal to 0, the function will throw an exception.
 
 3. `revertExample(uint256 _value)`: This function takes a parameter `_value` and demonstrates how to intentionally revert a transaction using the `revert()` function. If `_value` is greater than 100, the function reverts the transaction with an error message indicating that the value must not exceed 100.
 
@@ -38,12 +38,12 @@ contract ErrorHandlingExample {
         value = _newValue;
     }
 
-    function assertExample(uint256 x, uint256 y) public pure returns (uint256) {
+    function assertExample(uint256 P, uint256 Q) public pure returns (uint256) {
         // Using assert() to ensure an internal condition
         // Modified to avoid division by zero
-        assert(y != 0);
+        assert(Q != 0);
         
-        return x / y;
+        return P / Q;
     }
 
     function revertExample(uint256 _value) public pure {
