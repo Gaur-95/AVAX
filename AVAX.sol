@@ -11,12 +11,12 @@ contract ErrorHandlingExample {
         value = _newValue;
     }
 
-    function assertExample(uint256 x, uint256 y) public pure returns (uint256) {
+    function assertExample(uint256 P, uint256 Q) public pure returns (uint256) {
         // Using assert() to ensure an internal condition
         // Modified to avoid division by zero
-        assert(y != 0);
+        assert(Q != 0);
         
-        return x / y;
+        return P / Q;
     }
 
     function revertExample(uint256 _value) public pure {
